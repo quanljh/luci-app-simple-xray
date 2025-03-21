@@ -1,0 +1,29 @@
+{
+  "luci-app-simple-xray": {
+    "description": "Grant access to xray configuration",
+    "read": {
+      "file": {
+        "/usr/bin/xray": [ "read" ],
+        "/etc/xray/config.json": [ "read" ],
+        "/etc/xray/config.json.example": [ "read" ],
+        "/var/log/xray/error.log": [ "read" ],
+        "/etc/init.d/simple-xray restart": [ "exec"]
+      },
+      "ubus": {
+				"service": [ "list" ]
+			},
+      "uci": [
+        "simple-xray"
+      ]
+    },
+    "write": {
+      "file": {
+				"/etc/xray/config.json": [ "write" ],
+        "/var/log/xray/error.log": [ "write" ]
+			},
+      "uci": [
+        "simple-xray"
+      ]
+    }
+  }
+}

@@ -45,7 +45,7 @@ return view.extend({
   render: function () {
     let m, s, o;
 
-    m = new form.Map("simple-xray", _("simple-xray"), _("A simple luci app to run xray."));
+    m = new form.Map("simple-xray", _("simple-xray"), _("A simple luci interface for xray."));
 
     s = m.section(form.TypedSection);
     s.anonymous = true;

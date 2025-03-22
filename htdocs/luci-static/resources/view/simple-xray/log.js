@@ -4,7 +4,7 @@
 
 // Function to reload log via RPC
 function reloadLog() {
-  fs.read_direct("/var/log/xray/error.log")
+  fs.read_direct("/var/log/xray.log")
     .catch(function (e) {
       if (e.toString().includes("NotFoundError")) {
         return _("Log file not found.");
@@ -17,7 +17,7 @@ function reloadLog() {
 }
 
 function clearLog() {
-  fs.write("/var/log/xray/error.log", "")
+  fs.write("/var/log/xray.log", "")
     .catch(function (e) {
       console.error(e);
     })
@@ -54,7 +54,7 @@ return view.extend({
 
     // Initial load and set refresh interval
     reloadLog();
-    setInterval(reloadLog, 1000);
+    setInterval(reloadLog, 2000);
 
     return container;
   },

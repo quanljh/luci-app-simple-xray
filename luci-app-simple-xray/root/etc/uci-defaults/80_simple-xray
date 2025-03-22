@@ -6,4 +6,6 @@ uci set simple-xray.config.enabled='0'
 uci set simple-xray.config.config_file='/etc/xray/config.json'
 uci commit simple-xray
 
+chmod +x /etc/init.d/simple-xray
+
 return 0

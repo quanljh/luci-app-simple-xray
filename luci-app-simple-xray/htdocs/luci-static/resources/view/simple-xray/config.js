@@ -15,8 +15,7 @@ return view.extend({
     s.anonymous = true;
 
     o = s.option(form.TextValue, "configuration");
-    o.inputstyle = "width:100%";
-    o.rows = 40;
+    o.rows = 50;
     o.load = function (section) {
       // Use current UCI value for file path, default if not set
       let filePath = uci.get("simple-xray", "config", "config_file") || "/etc/xray/config.json";

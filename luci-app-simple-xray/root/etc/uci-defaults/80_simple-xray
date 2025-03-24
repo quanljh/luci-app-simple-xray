@@ -7,5 +7,6 @@ uci set simple-xray.config.config_file='/etc/xray/config.json'
 uci commit simple-xray
 
 chmod +x /etc/init.d/simple-xray
+chmod +x /usr/share/simple-xray/clear_log.sh
 
 return 0

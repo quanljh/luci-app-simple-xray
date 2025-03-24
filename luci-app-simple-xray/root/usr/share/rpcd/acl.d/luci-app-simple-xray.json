@@ -19,7 +19,8 @@
     "write": {
       "file": {
 				"/etc/xray/config.json": [ "write" ],
-        "/var/log/xray.log": [ "write" ]
+        "/var/log/xray.log": [ "write" ],
+        "/bin/sh /usr/share/simple-xray/clear_log.sh": [ "exec" ]
 			},
       "uci": [
         "simple-xray"
